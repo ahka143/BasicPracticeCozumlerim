@@ -1,6 +1,8 @@
 package interviewQuestions4;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class Q02_CreateRandomList_SetList {
     // int array list oluşturun 10 elemandan oluşmalı
@@ -10,33 +12,29 @@ public class Q02_CreateRandomList_SetList {
     // eğer çift sayı yoksa çift sayı yoktur mesajını versin.
 
     public static void main(String[] args) {
-        ArrayList<Integer> list = new ArrayList<Integer>();
-        randomEkle(list);
+        List<Integer> sayilar = new ArrayList<>();
+        randomEkle(sayilar);
     }
 
-    private static void randomEkle(ArrayList<Integer> list) {
-        for (int i = 0; i < 10; i++) {
-            list.add((int) (Math.random()*20));  // 0-20 arasi random sayi ekler
-            // double veri tipine sahip olan Math.random classi hata verdiginden
-            // integer a casting yaptik..random() methodu 0-1 arasi sayi uretir..
+    private static void randomEkle(List<Integer> sayilar) {
+
+        for (int i = 0; i < 10 ; i++) {
+
+            sayilar.add((int)(Math.random()*20));
 
         }
-        System.out.println("random liste :" + list);
+        System.out.println(sayilar);
 
-        int sayac =0;
-        for (int i = 0; i < list.size(); i++) { //random olusturulan elemanlarin listesine bakiyoruz
-            if(list.get(i)%2==0){ //cift sayi varsa
-                sayac++;
-                list.set(i,111);
+        for (int i = 0; i <sayilar.size() ; i++) {
+            if (sayilar.get(i)%2==0){
+                sayilar.set(i,111);
             }
 
         }
-        System.out.println("111 ler eklendikten sonra random liste :" + list);
+        System.out.println(sayilar);
 
-        if(sayac==0){
-            System.out.println("listede cift sayi yoktur..");
-        }
-        System.out.println("listen son hali :" + list);
+
+
     }
 
 

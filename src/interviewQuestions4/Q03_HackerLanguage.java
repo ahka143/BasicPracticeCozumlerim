@@ -17,45 +17,33 @@ public class Q03_HackerLanguage {
 //    İpucu harfleri değiştirin ve ekrana yazdırın.
 
 
-
     public static void main(String[] args) {
-
         Scanner scan = new Scanner(System.in);
-        System.out.print("bir cumle giriniz :");
+        System.out.println("Lutfen bir cumle giriniz");
         String cumle = scan.nextLine().toLowerCase();
-
-        hackerDili(cumle);
-
-    }
-    private static void hackerDili(String cumle) {
-        String arr [] = new String[cumle.length()];
-
-        for (int i = 0; i <cumle.length(); i++){
-            arr[i] = cumle.substring(i, i+1); //
-            System.out.print(arr[i]);
-        }
-        System.out.println(); //bundan sonraki satirda gelenler birlesmesin diye
-
-        for (int i = 0; i <cumle.length(); i++){
-            if(arr[i].contains("s")){
-                arr[i] ="5";
+        String yeniCumle = "";
+        for (int i = 0; i < cumle.length(); i++) {
+            switch (cumle.charAt(i)) {
+                case 's':
+                    yeniCumle += "5";
+                    break;
+                case 'a':
+                    yeniCumle += "4";
+                    break;
+                case 'e':
+                    yeniCumle += "3";
+                    break;
+                case 'i':
+                    yeniCumle += "1";
+                    break;
+                case 'o':
+                    yeniCumle += "0";
+                    break;
+                default:yeniCumle += cumle.charAt(i);
             }
-            if(arr[i].contains("a")){
-                arr[i] ="4";
-            }
-            if(arr[i].contains("e")){
-                arr[i] ="3";
-            }
-            if(arr[i].contains("i")){
-                arr[i] ="1";
-            }
-            if(arr[i].contains("o")){
-                arr[i] ="0";
-            }
-            System.out.print(arr[i]);
 
         }
-
+        System.out.println(yeniCumle);
 
     }
 }

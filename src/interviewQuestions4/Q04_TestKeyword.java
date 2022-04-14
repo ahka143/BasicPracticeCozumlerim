@@ -39,20 +39,25 @@ public class Q04_TestKeyword {
                 {'E', 'B', 'E', 'C', 'C', 'D', 'E', 'E', 'A', 'D'}};
 
         char[] keys = {'D', 'B', 'D', 'C', 'C', 'D', 'A', 'E', 'A', 'D'};
+
         testSonucu(answers,keys);
     }
 
     private static void testSonucu(char[][] answers, char[] keys) {
 
-        for (int i = 0; i < answers.length; i++) { //her bir ogrenciye bakar, ogrenci ->i
+        int sayac=0;
+        for (int i = 0; i <answers.length ; i++) {
 
-            int sayac =0; //her bir ogrenci icin dogru cevaplari sayacagi icin, sayac buraya konur
-            for (int j = 0; j <answers[i].length;j++){ //her ogrencinin cevaplarina bakar, ogrenci cevaplari ->j
-                if(answers[i][j] == keys[j]){ // cevap anahtari ile ogrenci cevaplarini karsilastiriyor cevaplar ->j oldugu icin keys[j] olmali
-                    sayac++;
-                }
+            for (int j = 0; j <keys.length ; j++) {
+               if (answers[i][j]==keys[j])
+                   sayac++;
+
             }
-            System.out.println(i+1 + " nolu ogrencinin dogru cevap sayisi :" + sayac);
+
+            System.out.println(i+1+". ogrenci dogru cevap sayisi: "+sayac);
+            sayac=0;
         }
+
     }
+
 }
